@@ -31,7 +31,7 @@ public class ExactChangeLightListener implements IndicatorLightListener {
 
 	@Override
 	public void activated(IndicatorLight light) {
-		logic.getDisplay().display("Exact Change Light is on!");
+		vm.getDisplay().display("Exact Change Light is on!");
 		ew.logEvent("Exact Change Light activated.");
 		
 	}

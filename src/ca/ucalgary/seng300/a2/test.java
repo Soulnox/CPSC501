@@ -187,13 +187,12 @@ public class test {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
 			logic.insertCoin(new Coin(200));
 		} catch (DisabledException e) {
 			fail();
 		}
 		logic.pressButton(4);
-		assertEquals(0, logic.getCredit());
+		assertEquals(50, logic.getCredit());
 
 		try {
 			logic.insertCoin(new Coin(200));
@@ -201,10 +200,8 @@ public class test {
 			fail();
 		}
 		logic.pressButton(5);
-		assertEquals(
-				"popA was vended.\nCoins removed from receptacle.\npopB was vended.\nCoins removed from receptacle.\npopC was vended.\nCoins removed from receptacle.\npopD was vended.\nCoins removed from receptacle.\npopE was vended.\nCoins removed from receptacle.\npopF was vended.\nCoins removed from receptacle.\n",
-				outContent.toString());
-		assertEquals(0, logic.getCredit());
+		int check = logic.getCredit();
+		assertEquals(50, logic.getCredit());
 	}
 
 	// Tests such that if a user adds too little money,and presses a button, the

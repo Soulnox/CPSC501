@@ -147,9 +147,6 @@ public class Logic {
 		credit = credit +  amount;
 	}
 	
-	public Display getDisplay() {
-		return vm.getDisplay();
-	}
 
 	public void setOutofOrder() {
 
