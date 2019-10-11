@@ -7,7 +7,7 @@ import org.lsmr.vending.hardware.CoinReturn;
 import org.lsmr.vending.hardware.CoinReturnListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class CReturnListener implements CoinReturnListener {
+public class MyCoinReturnListener implements CoinReturnListener {
 
 	private VendingMachine vm;
 	private EventWriter ew;
@@ -18,7 +18,7 @@ public class CReturnListener implements CoinReturnListener {
 		return off;
 	}
 	
-	public CReturnListener(VendingMachine vend, EventWriter ew, Logic logic) {
+	public MyCoinReturnListener(VendingMachine vend, EventWriter ew, Logic logic) {
 		this.vm = vend;
 		this.ew = ew;
 		this.logic = logic;

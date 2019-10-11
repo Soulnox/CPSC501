@@ -8,7 +8,7 @@ import org.lsmr.vending.hardware.CoinSlot;
 import org.lsmr.vending.hardware.CoinSlotListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class CSlotListener implements CoinSlotListener{
+public class MyCoinSlotListener implements CoinSlotListener{
 
 	private VendingMachine vm;
 	private EventWriter ew;
@@ -20,7 +20,7 @@ public class CSlotListener implements CoinSlotListener{
 		return off;
 	}
 	
-	public CSlotListener(VendingMachine vend, EventWriter ew, Logic logic) {
+	public MyCoinSlotListener(VendingMachine vend, EventWriter ew, Logic logic) {
 		this.vm = vend;
 		this.ew = ew;
 		this.logic = logic;

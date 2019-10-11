@@ -6,13 +6,13 @@ import org.lsmr.vending.hardware.IndicatorLight;
 import org.lsmr.vending.hardware.IndicatorLightListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class ExactChangeLightListener implements IndicatorLightListener {
+public class MyExactChangeLightListener implements IndicatorLightListener {
 	
 	private VendingMachine vm;
 	private EventWriter ew;
 	private Logic logic;
 
-	public ExactChangeLightListener(VendingMachine vm, EventWriter ew, Logic logic) {
+	public MyExactChangeLightListener(VendingMachine vm, EventWriter ew, Logic logic) {
 		this.vm = vm;
 		this.ew = ew;
 		this.logic = logic;

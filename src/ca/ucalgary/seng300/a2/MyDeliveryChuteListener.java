@@ -6,14 +6,14 @@ import org.lsmr.vending.hardware.DeliveryChute;
 import org.lsmr.vending.hardware.DeliveryChuteListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class DeliveryListener implements DeliveryChuteListener {
+public class MyDeliveryChuteListener implements DeliveryChuteListener {
 	private boolean isFull = false;
 	
 	private VendingMachine vm;
 	private EventWriter ew;
 	private Logic logic;
 	
-	public DeliveryListener(VendingMachine vm, EventWriter ew, Logic logic) {
+	public MyDeliveryChuteListener(VendingMachine vm, EventWriter ew, Logic logic) {
 		this.vm = vm;
 		this.ew = ew;
 		this.logic = logic;

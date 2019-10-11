@@ -16,16 +16,16 @@ public class Logic {
 	//listeners
 	//private ButtonListener buttonListener;
 	//private PCRListener popCanRackListener;
-	private CReturnListener returnListener;
-	private CSlotListener slotListener;
-	private DeliveryListener deliveryListener;
+	private MyCoinReturnListener returnListener;
+	private MyCoinSlotListener slotListener;
+	private MyDeliveryChuteListener deliveryListener;
 	private MyDisplayListener displayListener;
 
 	//private MyCoinRackListener coinRackListener;
-	private ExactChangeLightListener exactChangeListener;
-	private OutOfOrderLightListener outOfOrderListener;
+	private MyExactChangeLightListener exactChangeListener;
+	private MyOutOfOrderLightListener outOfOrderListener;
 	
-	private ReceptacleListener receptacleListener;
+	private MyCoinReceptacleListener receptacleListener;
 	
 	//constructor for logic class
 	public Logic(VendingMachine vend, EventWriter write) {
@@ -36,13 +36,13 @@ public class Logic {
 		
 		//buttonListener = new ButtonListener(vm, ew, this);
 		//popCanRackListener = new PCRListener(vm, ew, this);
-		returnListener = new CReturnListener(vm, ew, this);
-		slotListener = new CSlotListener(vm, ew, this);
-		deliveryListener = new DeliveryListener(vm, ew, this);
+		returnListener = new MyCoinReturnListener(vm, ew, this);
+		slotListener = new MyCoinSlotListener(vm, ew, this);
+		deliveryListener = new MyDeliveryChuteListener(vm, ew, this);
 		displayListener = new MyDisplayListener(vm, ew, this);
-		exactChangeListener = new ExactChangeLightListener(vm, ew, this);
-		outOfOrderListener = new OutOfOrderLightListener(vm, ew, this);
-		receptacleListener = new ReceptacleListener(vm, ew, this);
+		exactChangeListener = new MyExactChangeLightListener(vm, ew, this);
+		outOfOrderListener = new MyOutOfOrderLightListener(vm, ew, this);
+		receptacleListener = new MyCoinReceptacleListener(vm, ew, this);
 
 		//coinRackListener = new MyCoinRackListener(vm, ew, this);
 		
@@ -62,8 +62,8 @@ public class Logic {
 		
 
 		for (int i = 0; i < vm.getNumberOfPopCanRacks(); i++) {
-			vm.getPopCanRack(i).register(new PCRListener(vm, ew, this));
-			vm.getSelectionButton(i).register(new ButtonListener(vm, ew, this));
+			vm.getPopCanRack(i).register(new MyPopCanRackListener(vm, ew, this));
+			vm.getSelectionButton(i).register(new MyPushButtonListener(vm, ew, this));
 		}
 		
 		//Array of coin kinds for change return

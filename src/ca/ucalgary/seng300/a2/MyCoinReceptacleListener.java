@@ -12,12 +12,12 @@ import org.lsmr.vending.hardware.DisabledException;
 import org.lsmr.vending.hardware.EmptyException;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class ReceptacleListener implements CoinReceptacleListener{
+public class MyCoinReceptacleListener implements CoinReceptacleListener{
 	private VendingMachine vm;
 	private EventWriter ew;
 	private Logic logic;
 	
-	public ReceptacleListener (VendingMachine vm, EventWriter ew, Logic logic) {
+	public MyCoinReceptacleListener (VendingMachine vm, EventWriter ew, Logic logic) {
 		this.ew = ew;
 		this.vm = vm;
 		this.logic = logic;

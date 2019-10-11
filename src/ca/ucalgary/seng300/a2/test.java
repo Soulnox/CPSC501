@@ -18,7 +18,7 @@ import org.lsmr.vending.hardware.VendingMachine;
 public class test {
 	VendingMachine vm;
 	Logic logic;
-	ReceptacleListener crListener;
+	MyCoinReceptacleListener crListener;
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); // necessary to capture printed output
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 

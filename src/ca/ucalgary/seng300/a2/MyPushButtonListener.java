@@ -9,14 +9,14 @@ import org.lsmr.vending.hardware.PushButton;
 import org.lsmr.vending.hardware.PushButtonListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class ButtonListener implements PushButtonListener{
+public class MyPushButtonListener implements PushButtonListener{
 	
 	private VendingMachine vm;
 	private EventWriter ew;
 	private Logic logic;
 	private boolean off;
 	
-	public ButtonListener (VendingMachine vm, EventWriter ew, Logic logic) {
+	public MyPushButtonListener (VendingMachine vm, EventWriter ew, Logic logic) {
 		this.vm = vm;
 		this.logic = logic;
 		this.ew = ew;

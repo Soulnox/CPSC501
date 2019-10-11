@@ -9,13 +9,13 @@ import org.lsmr.vending.hardware.PopCanRack;
 import org.lsmr.vending.hardware.PopCanRackListener;
 import org.lsmr.vending.hardware.VendingMachine;
 
-public class PCRListener implements PopCanRackListener {
+public class MyPopCanRackListener implements PopCanRackListener {
 	private boolean isEmpty = false;
 	private VendingMachine vm;
 	private EventWriter ew;
 	private Logic logic;
 	
-	public PCRListener (VendingMachine vm, EventWriter ew, Logic logic) {
+	public MyPopCanRackListener (VendingMachine vm, EventWriter ew, Logic logic) {
 		this.ew = ew;
 		this.vm = vm;
 		this.logic = logic;
