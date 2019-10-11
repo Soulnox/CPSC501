@@ -22,7 +22,7 @@ public class Logic {
 	private MyDisplayListener displayListener;
 
 	//private MyCoinRackListener coinRackListener;
-	private MyExactChangeLightListener exactChangeListener;
+	private MyExactChangeIndicatorLightListener exactChangeListener;
 	private MyOutOfOrderLightListener outOfOrderListener;
 	
 	private MyCoinReceptacleListener receptacleListener;
@@ -40,7 +40,7 @@ public class Logic {
 		slotListener = new MyCoinSlotListener(vm, ew, this);
 		deliveryListener = new MyDeliveryChuteListener(vm, ew, this);
 		displayListener = new MyDisplayListener(vm, ew, this);
-		exactChangeListener = new MyExactChangeLightListener(vm, ew, this);
+		exactChangeListener = new MyExactChangeIndicatorLightListener(vm, ew, this);
 		outOfOrderListener = new MyOutOfOrderLightListener(vm, ew, this);
 		receptacleListener = new MyCoinReceptacleListener(vm, ew, this);
 
