@@ -59,7 +59,7 @@ public class Main {
 					// If button entered does not exist, it will throw a
 					// ArrayIndexOutOfBoundsException, which will then be caught.
 					try {
-						logic.pressButton(Integer.parseInt(str[1]));
+						vm.getSelectionButton(Integer.parseInt(str[1])).press();
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.println("Invalid Button");
 					}

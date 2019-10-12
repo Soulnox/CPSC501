@@ -50,4 +50,93 @@ public class CPSC501Tests {
 		assertTrue(outContent.toString().contains("Test"));
 	}
 	
+	@Test
+	// Basic test wherein the correct coins are added, enough money is added, and
+	// the button is pressed
+	public void testTrue() {
+		try {
+			logic.insertCoin(new Coin(100));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(0).press();
+		assertEquals("Credit: 100\nThank you for your purchase!\n", outContent.toString());
+		assertEquals(0, logic.getCredit());
+	}
+	
+	@Test
+	public void testPressInvalid() {
+		boolean thrown = false;
+		try {
+			vm.getSelectionButton(7).press();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			thrown = true;
+		}
+		assertTrue(thrown);
+	}
+	
+	@Test
+	public void testPressInvalidNegative() {
+		boolean thrown = false;
+		try {
+			vm.getSelectionButton(-1).press();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			thrown = true;
+		}
+		assertTrue(thrown);
+	}
+	
+	// Tests to see if all the buttons work as intended given enough money.
+	@Test
+	public void testAllButtons() {
+		try {
+			logic.insertCoin(new Coin(100));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(0).press();
+		assertEquals(0, logic.getCredit());
+
+		try {
+			logic.insertCoin(new Coin(100));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(1).press();
+		assertEquals(0, logic.getCredit());
+
+		try {
+			logic.insertCoin(new Coin(100));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(2).press();
+		assertEquals(0, logic.getCredit());
+
+		try {
+			logic.insertCoin(new Coin(100));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(3).press();
+		assertEquals(0, logic.getCredit());
+
+		try {
+			logic.insertCoin(new Coin(200));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(4).press();
+		assertEquals(50, logic.getCredit());
+
+		try {
+			logic.insertCoin(new Coin(200));
+		} catch (DisabledException e) {
+			fail();
+		}
+		vm.getSelectionButton(5).press();
+		int check = logic.getCredit();
+		assertEquals(50, logic.getCredit());
+	}
+	
 }

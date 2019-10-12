@@ -91,17 +91,11 @@ public class Logic {
 		
 	}
 	
-	public void pressButton(int button) {
-		vm.getSelectionButton(button).press();
-		//Check if vm still has pop
-		int hasPop = 0;
-		for(int i = 0; i < vm.getNumberOfPopCanRacks(); ++i) {
-			if(vm.getPopCanRack(i).size()>0) hasPop = 1;
-		}
-	//	if(!hasPop) {
-		//	vm.getOutOfOrderLight().activate();
-		//}
-		
+	public boolean hasPop(int popNum) {
+		if (vm.getPopCanRack(popNum).size() > 0)
+			return true;
+		else
+			return false;
 	}
 	
 	//Logic method for returning change via Greed method

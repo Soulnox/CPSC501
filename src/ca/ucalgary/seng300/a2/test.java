@@ -53,7 +53,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(0);
+		vm.getSelectionButton(0).press();
 		assertEquals("Credit: 100\nThank you for your purchase!\n", outContent.toString());
 		assertEquals(0, logic.getCredit());
 	}
@@ -67,7 +67,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(0);
+		vm.getSelectionButton(0).press();
 		assertEquals("Credit: 25\nNot enough credit\n", outContent.toString());
 		assertEquals(25, logic.getCredit());
 	}
@@ -75,7 +75,7 @@ public class test {
 	// Tests what happens when a button is pushed with no money added whatsoever
 	@Test
 	public void testNoCoins() {
-		logic.pressButton(0);
+		vm.getSelectionButton(0).press();
 		assertEquals("Not enough credit\n", outContent.toString());
 		assertEquals(0, logic.getCredit());
 	}
@@ -92,7 +92,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(0);
+		vm.getSelectionButton(0).press();
 		for (int i = 25; i < 5001 ; i += 25) {
 			a += "Credit: " + Integer.toString(i) + "\n";
 		}
@@ -111,7 +111,7 @@ public class test {
 		try {
 			for (int i = 0; i < 11; i++) {
 				logic.insertCoin(new Coin(100));
-				logic.pressButton(0);
+				vm.getSelectionButton(0).press();
 				if (i < 10) {
 					s += "Credit: 100\nThank you for your purchase!\n";
 				}
@@ -133,7 +133,7 @@ public class test {
 	public void testPressInvalid() {
 		boolean thrown = false;
 		try {
-			logic.pressButton(7);
+			vm.getSelectionButton(7).press();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			thrown = true;
 		}
@@ -144,7 +144,7 @@ public class test {
 	public void testPressInvalidNegative() {
 		boolean thrown = false;
 		try {
-			logic.pressButton(-1);
+			vm.getSelectionButton(-1).press();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			thrown = true;
 		}
@@ -159,7 +159,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(0);
+		vm.getSelectionButton(0).press();
 		assertEquals(0, logic.getCredit());
 
 		try {
@@ -167,7 +167,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(1);
+		vm.getSelectionButton(1).press();
 		assertEquals(0, logic.getCredit());
 
 		try {
@@ -175,7 +175,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(2);
+		vm.getSelectionButton(2).press();
 		assertEquals(0, logic.getCredit());
 
 		try {
@@ -183,7 +183,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(3);
+		vm.getSelectionButton(3).press();
 		assertEquals(0, logic.getCredit());
 
 		try {
@@ -191,7 +191,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(4);
+		vm.getSelectionButton(4).press();
 		assertEquals(50, logic.getCredit());
 
 		try {
@@ -199,7 +199,7 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(5);
+		vm.getSelectionButton(5).press();
 		int check = logic.getCredit();
 		assertEquals(50, logic.getCredit());
 	}
@@ -214,14 +214,14 @@ public class test {
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(5);
+		vm.getSelectionButton(5).press();
 		assertEquals(100, logic.getCredit());
 		try {
 			logic.insertCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
-		logic.pressButton(5);
+		vm.getSelectionButton(5).press();
 		assertEquals("Credit: 100\nNot enough credit\nCredit: 200\nThank you for your purchase!\n", outContent.toString());
 		assertEquals(0, logic.getCredit());
 	}
