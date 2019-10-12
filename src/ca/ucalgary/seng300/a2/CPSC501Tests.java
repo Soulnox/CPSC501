@@ -139,4 +139,9 @@ public class CPSC501Tests {
 		assertEquals(50, logic.getCredit());
 	}
 	
+	@Test
+	public void hasPop() {
+		assertTrue(logic.hasPop(0));
+	}
+	
 }
