@@ -49,7 +49,7 @@ public class test {
 	// the button is pressed
 	public void testTrue() {
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -63,7 +63,7 @@ public class test {
 	@Test
 	public void testNotEnoughCoins() {
 		try {
-			logic.insertCoin(new Coin(25));
+			vm.getCoinSlot().addCoin(new Coin(25));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -87,7 +87,7 @@ public class test {
 		String a = "";
 		try {
 			for (int i = 0; i < 201; i++) {
-				logic.insertCoin(new Coin(25));
+				vm.getCoinSlot().addCoin(new Coin(25));
 			}
 		} catch (DisabledException e) {
 			fail();
@@ -110,7 +110,7 @@ public class test {
 		String s = "";
 		try {
 			for (int i = 0; i < 11; i++) {
-				logic.insertCoin(new Coin(100));
+				vm.getCoinSlot().addCoin(new Coin(100));
 				vm.getSelectionButton(0).press();
 				if (i < 10) {
 					s += "Credit: 100\nThank you for your purchase!\n";
@@ -155,7 +155,7 @@ public class test {
 	@Test
 	public void testAllButtons() {
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -163,7 +163,7 @@ public class test {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -171,7 +171,7 @@ public class test {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -179,7 +179,7 @@ public class test {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -187,7 +187,7 @@ public class test {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(200));
+			vm.getCoinSlot().addCoin(new Coin(200));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -195,7 +195,7 @@ public class test {
 		assertEquals(50, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(200));
+			vm.getCoinSlot().addCoin(new Coin(200));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -210,14 +210,14 @@ public class test {
 	@Test
 	public void testCoinsKeptInReceptacle() {
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
 		vm.getSelectionButton(5).press();
 		assertEquals(100, logic.getCredit());
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -230,7 +230,7 @@ public class test {
 	@Test
 	public void testAddInvalidCoins() {
 		try {
-			logic.insertCoin(new Coin(300));
+			vm.getCoinSlot().addCoin(new Coin(300));
 		} catch (DisabledException e) {
 			fail();
 		}

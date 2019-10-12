@@ -86,11 +86,6 @@ public class Logic {
 		
 	}
 	
-	public void insertCoin(Coin coin) throws DisabledException {
-		vm.getCoinSlot().addCoin(coin);
-		
-	}
-	
 	public boolean hasPop(int popNum) {
 		if (vm.getPopCanRack(popNum).size() > 0)
 			return true;

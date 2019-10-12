@@ -53,7 +53,7 @@ public class Main {
 				String[] str = st.split("\\s+");
 				if (str[0].trim().equals("insert")) {
 					// Add coin value to the receptacle, if legal.
-					logic.insertCoin(new Coin(Integer.parseInt(str[1])));
+					vm.getCoinSlot().addCoin(new Coin(Integer.parseInt(str[1])));
 
 				} else if (str[0].equals("press")) {
 					// If button entered does not exist, it will throw a

@@ -55,7 +55,7 @@ public class CPSC501Tests {
 	// the button is pressed
 	public void testTrue() {
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -90,7 +90,7 @@ public class CPSC501Tests {
 	@Test
 	public void testAllButtons() {
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -98,7 +98,7 @@ public class CPSC501Tests {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -106,7 +106,7 @@ public class CPSC501Tests {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -114,7 +114,7 @@ public class CPSC501Tests {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(100));
+			vm.getCoinSlot().addCoin(new Coin(100));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -122,7 +122,7 @@ public class CPSC501Tests {
 		assertEquals(0, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(200));
+			vm.getCoinSlot().addCoin(new Coin(200));
 		} catch (DisabledException e) {
 			fail();
 		}
@@ -130,7 +130,7 @@ public class CPSC501Tests {
 		assertEquals(50, logic.getCredit());
 
 		try {
-			logic.insertCoin(new Coin(200));
+			vm.getCoinSlot().addCoin(new Coin(200));
 		} catch (DisabledException e) {
 			fail();
 		}
